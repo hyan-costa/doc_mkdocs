@@ -1,0 +1,1439 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../get_valuation/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/eemovel_favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Start Valuation - API AVM Gateway</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#post-start-valuation" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="API AVM Gateway" class="md-header__button md-logo" aria-label="API AVM Gateway" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            API AVM Gateway
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Start Valuation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="API AVM Gateway" class="md-nav__button md-logo" aria-label="API AVM Gateway" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    API AVM Gateway
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Endpoints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_report_pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Report PDF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_valuation_status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valuation Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_valuation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valuation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Start Valuation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Start Valuation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payload:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessing-referente-aos-dados-do-imovel-que-sera-avaliado-avaliando" class="md-nav__link">
+    <span class="md-ellipsis">
+      assessing: Referente aos dados do IMÓVEL que será avaliado (avaliando)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="assessing: Referente aos dados do IMÓVEL que será avaliado (avaliando)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neighborhood-street-number-city-postal_code-state-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      neighborhood, street, number, city, postal_code, state, complement:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lat-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      lat, lon:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub_category_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      sub_category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_bathroom-features_bedroom-features_suite-features_garage" class="md-nav__link">
+    <span class="md-ellipsis">
+      features_bathroom, features_bedroom, features_suite, features_garage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-referente-aos-dados-que-serao-usados-na-busca-dos-anuncios" class="md-nav__link">
+    <span class="md-ellipsis">
+      search: : referente aos dados que serão usados na busca dos anúncios.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search: : referente aos dados que serão usados na busca dos anúncios.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_sale" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sale:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_age" class="md-nav__link">
+    <span class="md-ellipsis">
+      max_age:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighborhood-street-number-city-postal_code-state-street_long" class="md-nav__link">
+    <span class="md-ellipsis">
+      neighborhood, street, number, city, postal_code, state, street_long:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category_id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub_category_id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      sub_category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      price_area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      price_total:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_bathroom-features_bedroom-features_suite-features_garage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      features_bathroom, features_bedroom, features_suite, features_garage:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      radius:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lat-lon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      lat, lon:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      coordinates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more_filters-filtros-aplicados-na-busca-das-amostrasanuncios" class="md-nav__link">
+    <span class="md-ellipsis">
+      more_filters: filtros aplicados na busca das amostras/anuncios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="more_filters: filtros aplicados na busca das amostras/anuncios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove_duplicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_duplicates:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full_address" class="md-nav__link">
+    <span class="md-ellipsis">
+      full_address:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active_ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      active_ads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recent_ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      recent_ads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_quantity_ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      min_quantity_ad:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      min_similarity:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payload:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessing-referente-aos-dados-do-imovel-que-sera-avaliado-avaliando" class="md-nav__link">
+    <span class="md-ellipsis">
+      assessing: Referente aos dados do IMÓVEL que será avaliado (avaliando)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="assessing: Referente aos dados do IMÓVEL que será avaliado (avaliando)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neighborhood-street-number-city-postal_code-state-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      neighborhood, street, number, city, postal_code, state, complement:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lat-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      lat, lon:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub_category_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      sub_category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_bathroom-features_bedroom-features_suite-features_garage" class="md-nav__link">
+    <span class="md-ellipsis">
+      features_bathroom, features_bedroom, features_suite, features_garage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-referente-aos-dados-que-serao-usados-na-busca-dos-anuncios" class="md-nav__link">
+    <span class="md-ellipsis">
+      search: : referente aos dados que serão usados na busca dos anúncios.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search: : referente aos dados que serão usados na busca dos anúncios.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_sale" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sale:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_age" class="md-nav__link">
+    <span class="md-ellipsis">
+      max_age:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighborhood-street-number-city-postal_code-state-street_long" class="md-nav__link">
+    <span class="md-ellipsis">
+      neighborhood, street, number, city, postal_code, state, street_long:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category_id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub_category_id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      sub_category_id:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      price_area:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      price_total:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_bathroom-features_bedroom-features_suite-features_garage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      features_bathroom, features_bedroom, features_suite, features_garage:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      radius:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lat-lon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      lat, lon:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      coordinates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more_filters-filtros-aplicados-na-busca-das-amostrasanuncios" class="md-nav__link">
+    <span class="md-ellipsis">
+      more_filters: filtros aplicados na busca das amostras/anuncios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="more_filters: filtros aplicados na busca das amostras/anuncios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove_duplicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_duplicates:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full_address" class="md-nav__link">
+    <span class="md-ellipsis">
+      full_address:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active_ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      active_ads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recent_ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      recent_ads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_quantity_ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      min_quantity_ad:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      min_similarity:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="post-start-valuation"><strong>POST</strong> Start Valuation</h1>
+<h2 id="rota">Rota:</h2>
+<div class="language-text highlight"><pre><span></span><code>https://api.prd.valuation.eemovel.com.br/admin/avm-gateway/internal/start_valuation
+</code></pre></div>
+<h2 id="payload">Payload:</h2>
+<details class="question">
+<summary>Payload</summary>
+<ul>
+<li>
+<h3 id="assessing-referente-aos-dados-do-imovel-que-sera-avaliado-avaliando"><strong>assessing:</strong> <em>Referente aos dados do IMÓVEL que será avaliado (avaliando)</em></h3>
+<ul>
+<li>
+<h4 id="neighborhood-street-number-city-postal_code-state-complement"><strong>neighborhood, street, number, city, postal_code, state, complement:</strong></h4>
+<ul>
+<li><em>Bairro, rua, número, Cidade, CEP, Estado e Complemento, respectivamente
+Dados de endereço do avaliando</em></li>
+</ul>
+</li>
+<li>
+<h4 id="lat-lon"><strong>lat, lon:</strong></h4>
+<ul>
+<li><em>Latitude e Longitude respectivamente, caso não sejam informados, a api vai tentar encontrar através dos dados de endereço do avaliando (pode não ser possível)</em></li>
+</ul>
+</li>
+<li>
+<h4 id="area"><strong>area:</strong></h4>
+<ul>
+<li><em>Área total em metros quadrados do avaliando</em></li>
+</ul>
+</li>
+<li>
+<h4 id="category_id"><strong>Category_id:</strong></h4>
+<ul>
+<li><em>Numeração referente ao tipo do imóvel (1 para apartamento e 2 para casa)</em></li>
+</ul>
+</li>
+<li>
+<h4 id="sub_category_id"><strong>sub_category_id:</strong></h4>
+<ul>
+<li><em>Numeração referente ao subtipo do imóvel, se divide em casa e apartamento</em></li>
+<li><em>Categorias de casa: 2 (Casa Padrão), 4 (Sobrado), 13 (Casa Geminada), 14 (Casa em Condomínio), 15
+    (Sobrado Geminado), 16 (Sobrado em Condomínio);</em></li>
+<li><em>Categorias de apartamento: 1 (Apartamento Padrão), 7 (Quitinete), 8 (Studio), 9 (Duplex), 10 (Triplex),
+    11 (Flat), 12 (Loft), 22 (Cobertura).</em></li>
+</ul>
+</li>
+<li>
+<h4 id="features_bathroom-features_bedroom-features_suite-features_garage"><strong>features_bathroom, features_bedroom, features_suite, features_garage:</strong></h4>
+<ul>
+<li><em>Banheiro, quarto, suite e garagem, respectivamente
+Numeração para indicar a quantidade de cada, indo do 1 ao 4</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="search-referente-aos-dados-que-serao-usados-na-busca-dos-anuncios"><strong>search: :</strong> <em>referente aos dados que serão usados na busca dos anúncios.</em></h3>
+<ul>
+<li>
+<h4 id="is_sale"><em>is_sale:</em></h4>
+<ul>
+<li><em>true deve ser passado para anúncios de vende e false para aluguel</em></li>
+</ul>
+</li>
+<li>
+<h4 id="max_age"><em>max_age:</em></h4>
+<ul>
+<li><em>idade máxima dos anúncios retornados (campo recebido em anos).</em></li>
+</ul>
+</li>
+<li>
+<h4 id="neighborhood-street-number-city-postal_code-state-street_long"><em>neighborhood, street, number, city, postal_code, state, street_long:</em></h4>
+<ul>
+<li><em>Bairro, rua, número, Cidade, CEP, Estado e Rua (completa sem abreviações), respectivamente
+  Dados de endereço da busca</em></li>
+</ul>
+</li>
+<li>
+<h4 id="category_id_1"><strong>category_id:</strong></h4>
+<ul>
+<li><em>Numeração referente ao tipo do imóvel (1 para apartamento e 2 para casa)</em></li>
+</ul>
+</li>
+<li>
+<h4 id="sub_category_id_1"><strong>sub_category_id:</strong></h4>
+<ul>
+<li><em>Numeração referente ao subtipo do imóvel, se divide em casa e apartamento</em></li>
+<li><em>ategorias de casa: 2 (Casa Padrão), 4 (Sobrado), 13 (Casa Geminada), 14 (Casa em Condomínio),
+15 (Sobrado Geminado), 16 (Sobrado em Condomínio);</em></li>
+<li><em>Categorias de apartamento: 1 (Apartamento Padrão), 7 (Quitinete), 8 (Studio), 9 (Duplex), 10 (Triplex),
+11 (Flat), 12 (Loft), 22 (Cobertura).</em></li>
+<li><em>Caso não passado será preenchido automaticamente através da subcategoria do avaliando, isso é feito pegando
+todos os outros elementos do grupo escolhido, por exemplo, se no avaliando o número 4 foi informado na busca
+será usado 2, 4, 13, 14, 15, 16, já que os mesmo fazer parte da categoria casa que é o grupo ao qual o 4
+pertence, da mesma forma que se no avaliando o 7 e 11 forem passados na busca será utilizado
+1, 7, 8, 9, 10, 11, 12, 22</em></li>
+</ul>
+</li>
+<li>
+<h4 id="area_1"><em>area:</em></h4>
+<ul>
+<li><em>Dividido em área útil (useful) e total (total) recebendo o valor e a porcentagem de margem, onde a margem vai
+ser aplicada no valor da área durante a busca;</em></li>
+</ul>
+</li>
+<li>
+<h4 id="price_area"><em>price_area:</em></h4>
+<ul>
+<li><em>Dividido em preço do metro quadrado util (useful) e total (total) dos imóveis, recebendo o valor e a
+porcentagem de margem, onde a margem vai ser aplicada no preço durante a busca;</em></li>
+</ul>
+</li>
+<li>
+<h4 id="price_total"><em>price_total:</em></h4>
+<ul>
+<li><em>referente aos preço final dos anúncios, recebe o valor e a porcentagem de margem, onde a margem vai ser
+aplicada no preço durante a busca;</em></li>
+</ul>
+</li>
+<li>
+<h4 id="features_bathroom-features_bedroom-features_suite-features_garage_1"><em>features_bathroom, features_bedroom, features_suite, features_garage:</em></h4>
+<ul>
+<li><em>Banheiro, quarto, suite e garagem, respectivamente</em></li>
+<li><em>Numeração para indicar a quantidade de cada, indo do 1 ao 4</em></li>
+<li><em>O 4 é equivalente a ele mesmo e todos os números a cima</em></li>
+</ul>
+</li>
+<li>
+<h4 id="radius"><em>radius:</em></h4>
+<ul>
+<li><em>Raio, caso não informado será automatizado, baseado na densidade de anúncios da região.</em></li>
+</ul>
+</li>
+<li>
+<h4 id="lat-lon_1"><em>lat, lon:</em></h4>
+<ul>
+<li><em>Latitude e Longitude respectivamente, caso não sejam informados, a api vai tentar encontrar através dos dados
+de endereço da busca (pode não ser possível)</em></li>
+</ul>
+</li>
+<li>
+<h4 id="coordinates"><em>coordinates:</em></h4>
+<ul>
+<li><em>Coordenadas, demarcação poligonal que limita a busca a anúncios que estão dentro dessa região delimitada,
+caso não passado a api vai gerar um a partir do raio juntamente com a latitude e longitude</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="more_filters-filtros-aplicados-na-busca-das-amostrasanuncios"><strong>more_filters:</strong> <em>filtros aplicados na busca das amostras/anuncios</em></h3>
+<ul>
+<li>
+<h4 id="remove_duplicates"><em>remove_duplicates:</em></h4>
+<ul>
+<li><em>Remove anúncios duplicados;</em> </li>
+</ul>
+</li>
+<li>
+<h4 id="full_address"><em>full_address:</em></h4>
+<ul>
+<li><em>Apenas anúncios com endereço completo.</em></li>
+</ul>
+</li>
+<li>
+<h4 id="active_ads"><em>active_ads:</em></h4>
+<ul>
+<li><em>Retorna apenas anúncios ativos.</em></li>
+<li><em>Esse filtro faz uma predição considerando as datas de atualização do anúncio mas, não é possivel prever com 
+exatidão pois, isso está hospedado em um portal terceiro e sujeito a variação.</em></li>
+</ul>
+</li>
+<li>
+<h4 id="recent_ads"><em>recent_ads:</em></h4>
+<ul>
+<li><em>Apenas anuncios recentes</em></li>
+</ul>
+</li>
+<li>
+<h4 id="min_quantity_ad"><em>min_quantity_ad:</em></h4>
+<ul>
+<li><em>Define a quantidade mínima de anúncios que serão selecionados.</em></li>
+</ul>
+</li>
+<li>
+<h4 id="min_similarity"><em>min_similarity:</em></h4>
+<ul>
+<li><em>Quantidade minima de similaridade que o anúncio encontrado deve ter para ser
+considerado (recebe um valor entre 0 e 1).</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="request">Request:</h2>
+<details class="question">
+<summary>Example Request</summary>
+<ul>
+<li><em>method: GET</em></li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Body</label><label for="__tabbed_1_3">Headers (13)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code>curl --location &#39;https://api.prd.valuation.eemovel.com.br/admin/avm-gateway/internal/start_valuation&#39; --header &#39;x-api-key: apikey&#39; --data &#39;json&#39;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><strong>json:</strong>
+<div class="language-json select highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;is_sale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&quot;max_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">          </span><span class="nt">&quot;street&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R. Iguatinga&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">          </span><span class="nt">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Santo Amaro&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">          </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;04744-040&quot;</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">          </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SP&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nt">&quot;street_long&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rua Iguatinga&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">&quot;realty_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">          </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">          </span><span class="p">],</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="nt">&quot;sub_category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">          </span><span class="p">]</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">          </span><span class="nt">&quot;useful&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">          </span><span class="p">},</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">          </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="nt">&quot;price_area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">          </span><span class="nt">&quot;useful&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">            </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">          </span><span class="p">},</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">          </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">            </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="nt">&quot;price_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">          </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">          </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="nt">&quot;typology&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">          </span><span class="nt">&quot;features_bathroom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">          </span><span class="nt">&quot;features_bedroom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">          </span><span class="nt">&quot;features_suite&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">          </span><span class="nt">&quot;features_garage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">          </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">          </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-23.6571986</span><span class="p">,</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">          </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-46.7045881</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">      </span><span class="nt">&quot;assessing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">        </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-23.6571986</span><span class="p">,</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">        </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-46.7045881</span><span class="p">,</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">        </span><span class="nt">&quot;neighborhood&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Santo Amaro&quot;</span><span class="p">,</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">        </span><span class="nt">&quot;street&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R. Iguatinga&quot;</span><span class="p">,</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">        </span><span class="nt">&quot;sub_category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">        </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">        </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;04744-040&quot;</span><span class="p">,</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SP&quot;</span><span class="p">,</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">        </span><span class="nt">&quot;complement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apto 1202, bloco C&quot;</span><span class="p">,</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">        </span><span class="nt">&quot;typology&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">          </span><span class="nt">&quot;features_bathroom&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">          </span><span class="nt">&quot;features_bedroom&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">          </span><span class="nt">&quot;features_suite&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">          </span><span class="nt">&quot;features_garage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">      </span><span class="nt">&quot;more_filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">        </span><span class="nt">&quot;full_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">        </span><span class="nt">&quot;remove_duplicates&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">        </span><span class="nt">&quot;active_ads&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">        </span><span class="nt">&quot;recent_ads&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">        </span><span class="nt">&quot;min_quantity_ad&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code> x-api-key                               your_api_key
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="response">Response:</h2>
+<details class="question">
+<summary>Example Response</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Body</label><label for="__tabbed_2_2">Headers (13)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json select highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b48387c642ec45c0b0e007b96f3076bd&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Busca de anúncios iniciada com sucesso!&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code>Content-Type                            application/json
+
+Content-Length                          134
+
+Connection                              keep-alive
+
+Date                                    Wed, 29 Nov 2023 23:42:46 GMT
+
+x-amzn-RequestId                        00c6df2a-6f4a-4412-988e-9c7f83ee71db
+
+Access-Control-Allow-Origin             *
+
+x-amzn-Remapped-Content-Length          134
+
+x-amz-apigw-id                          PLzgTEJIIAMEdEQ=
+
+X-Amzn-Trace-Id                         Root=1-6567cc68-73b8c97e28dd95ee4eda0e53
+
+X-Cache                                 Miss from cloudfront
+
+Via                                     1.1 39c56f5335aa583fff94230bb4959d02.cloudfront.net (CloudFront)
+
+X-Amz-Cf-Pop                            FOR50-P3
+
+X-Amz-Cf-Id                             gYljOHAGDjgHiww38_7Mlo6xveeG4UutYqf87-ESs2oedKpVh6JXUA==
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,15 @@
+:root {
+  --md-primary-fg-color:        #29313E;
+  --md-accent-fg-color: #000000;
+}
+h1 strong, h1, h2{
+  color: rgb(177, 137, 53);
+}
+
+
+.md-nav--primary ul{
+    margin-top: 10px;
+    border-radius: 5px;
+
+}
+
